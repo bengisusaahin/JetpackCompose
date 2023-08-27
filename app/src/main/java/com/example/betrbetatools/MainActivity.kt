@@ -9,7 +9,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.betrbetatools.ui.theme.BetrBetaToolsTheme
 
 class MainActivity : ComponentActivity() {
@@ -37,14 +40,15 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
             text = "Hello $name!",
-            modifier = modifier
+            modifier = modifier,
+            color = Color.Magenta,
+            fontSize = 25.sp,
+            fontWeight = FontWeight.Bold
     )
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true) // Emulator shows that what is in here
 @Composable
 fun GreetingPreview() {
-    BetrBetaToolsTheme {
-        Greeting("Android")
-    }
+    Greeting("Android")
 }
