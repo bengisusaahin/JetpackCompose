@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -65,6 +66,19 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         CustomText(text = "Hello World")
         Spacer(modifier = Modifier.padding(5.dp))
         CustomText(text = "Hello Kotlin")
+        Spacer(modifier = Modifier.padding(5.dp))
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+        ){
+            CustomText(text = "Test 1")
+            Spacer(modifier = Modifier.padding(5.dp))
+            CustomText(text = "Test 2")
+            Spacer(modifier = Modifier.padding(5.dp))
+            CustomText(text = "Test 3")
+        }
     }
 
 
@@ -82,9 +96,9 @@ fun CustomText(text: String){
             }
             //.size(width = 50.dp, height = 50.dp)
             //.fillMaxSize(0.5f)
-            .width(200.dp)
+            //.width(150.dp)
         ,color = Color.White,
-        fontSize = 25.sp,
+        fontSize = 22.sp,
         fontWeight = FontWeight.Bold,
         textAlign = TextAlign.Center
     )
