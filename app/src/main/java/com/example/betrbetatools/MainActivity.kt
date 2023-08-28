@@ -7,7 +7,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -46,28 +50,30 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
     //Column, Row, Box
     Column {
-        Text(
-            text = "Hello $name!",
-            modifier = Modifier
-                .background(color = Color.Black)
-                .padding(top = 10.dp, start = 1.dp, end = 1.dp, bottom = 30.dp)
-                .clickable {
-                        println("hello android clicked")
-                },
-            color = Color.White,
-            fontSize = 25.sp,
-            fontWeight = FontWeight.Bold
-        )
-        Text(
-            text = "Hello World!",
-            modifier = modifier,
-            color = Color.Magenta,
-            fontSize = 25.sp,
-            fontWeight = FontWeight.Bold
-        )
+        CustomText(text = "Hello Android")
+        CustomText(text = "Hello World")
+        CustomText(text = "Hello Kotlin")
     }
 
 
+}
+
+@Composable
+fun CustomText(text: String){
+    Text(
+        text = text,
+        modifier = Modifier
+            .background(color = Color.Black)
+            .padding(top = 10.dp, start = 1.dp, end = 1.dp, bottom = 30.dp)
+            .clickable {
+                println("hello android clicked")
+            }
+            //.size(width = 50.dp, height = 50.dp)
+            .fillMaxSize(0.5f),
+        color = Color.White,
+        fontSize = 25.sp,
+        fontWeight = FontWeight.Bold
+    )
 }
 
 @Preview(showBackground = true) // Emulator shows that what is in here
